@@ -24,15 +24,21 @@ const ProductCard = ({
         </div>
       </div>
       <Button
-        variant="contained"
-        style={{ backgroundColor: "#3c6cdf", color: "#fff" }}
+        variant="outlined"
+        style={{
+          width: "8rem",
+          border: "2px solid orange",
+          color: "orange",
+          textTransform: "capitalize",
+        }}
       >
         Add to Cart
       </Button>
       <Button
         variant="contained"
         style={{
-          backgroundColor: "#3c6cdf",
+          backgroundColor: "orange",
+          width: "8rem",
           color: "#fff",
           marginLeft: "1rem",
         }}

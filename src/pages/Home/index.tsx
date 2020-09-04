@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { IconButton } from "@material-ui/core";
 import styles from "./Home.module.css";
 import { Smartphones } from "../../components/Products";
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
 import ProductCard from "../../components/ProductCard";
-import { title } from "process";
 const Home = () => {
+  const [data, setData] = useState<any>();
+  setData();
+  console.log(Object.entries(Smartphones));
   return (
     <div className={styles.home}>
       <header className={styles.home__header}>

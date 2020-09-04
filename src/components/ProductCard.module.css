@@ -1,5 +1,7 @@
 .root {
   margin-top: 2vh;
+  margin-bottom: 2vh;
+
   max-height: 40vh;
   background-color: #fff;
   padding: 1rem;
@@ -39,13 +41,11 @@
 .ProductCard__details__price {
   margin: 0.75rem 0rem;
 }
+
 @media screen and (max-width: 768px) {
   .root {
     background-color: #fff;
-
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(199, 199, 199, 1);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(199, 199, 199, 1);
-    box-shadow: 0px 0px 5px 0px rgba(199, 199, 199, 1);
+    width: 90vw;
   }
   .ProductCard__details__desc {
     max-height: 10vh;
