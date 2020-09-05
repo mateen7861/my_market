@@ -1,13 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IconButton } from "@material-ui/core";
 import styles from "./Home.module.css";
 import { Smartphones } from "../../components/Products";
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
 import ProductCard from "../../components/ProductCard";
 const Home = () => {
-  const [data, setData] = useState<any>();
-  setData();
-  console.log(Object.entries(Smartphones));
+
+  const [search, setSearch] = useState("");
+  const [filteredData, setFilteredData]:any = useState([]);
+
+  useEffect(() => {
+    setFilteredData(
+      Smartphones.filter((smartphone) =>
+        smartphone.title.toLowerCase().includes(search.toLowerCase())
+      )
+    );
+  }, [search, Smartphones]);
   return (
     <div className={styles.home}>
       <header className={styles.home__header}>
@@ -18,12 +26,13 @@ const Home = () => {
         <IconButton>
           <SearchRoundedIcon style={{ color: "grey" }} />
         </IconButton>
-        <input type="text" placeholder="Type here to search" />
+        <input type="text" placeholder="Type here to search" onChange={(e)=>setSearch(e.target.value)} />
       </div>
       <br />
+      {console.log(filteredData)}
 
-      {Smartphones.map(
-        ({ title, imageUrl, brand, description, price, storage }, index) => (
+      {filteredData.length!==0?filteredData.map(
+        ({ title, imageUrl, brand, description, price, storage }:any, index:any) => (
           <div key={index}>
             <ProductCard
               title={title}
@@ -34,8 +43,10 @@ const Home = () => {
               storage={storage}
             />
           </div>
+          
         )
-      )}
+      )        :<h1>Not found</h1>
+    }
       <br />
       <br />
       <br />

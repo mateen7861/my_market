@@ -7,6 +7,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import PersonRoundedIcon from "@material-ui/icons/PersonRounded";
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -31,10 +32,30 @@ export default function SimpleBottomNavigation() {
       showLabels
       className={classes.root}
     >
-      <BottomNavigationAction label="Home" icon={<HomeRoundedIcon />} />
-      <BottomNavigationAction label="Search" icon={<SearchRoundedIcon />} />
-      <BottomNavigationAction label="Cart" icon={<ShoppingCartIcon />} />
-      <BottomNavigationAction label="Me" icon={<PersonRoundedIcon />} />
+      <BottomNavigationAction
+        label="Home"
+        icon={<HomeRoundedIcon />}
+        component={Link}
+        to="/"
+      />
+      <BottomNavigationAction
+        label="Search"
+        icon={<SearchRoundedIcon />}
+        component={Link}
+        to="/search"
+      />
+      <BottomNavigationAction
+        label="Cart"
+        icon={<ShoppingCartIcon />}
+        component={Link}
+        to="/cart"
+      />
+      <BottomNavigationAction
+        label="Me"
+        icon={<PersonRoundedIcon />}
+        component={Link}
+        to="/me"
+      />
     </BottomNavigation>
   );
 }

@@ -1,5 +1,5 @@
-export const Smartphones = {
-  1: {
+export const Smartphones = [
+  {
     title: "iphone 11 pro",
     storage: "64/128/256 Gb",
     imageUrl:
@@ -9,7 +9,7 @@ export const Smartphones = {
     price: "$1099",
     brand: "Apple",
   },
-  2: {
+ {
     title: "Note20 Ultra ",
     storage: "128/256/512 Gb",
     imageUrl:
@@ -19,7 +19,7 @@ export const Smartphones = {
     price: "$1299",
     brand: "Samsung",
   },
-  3: {
+  {
     title: "OnePlus 8 Pro ",
     storage: "128/256 Gb",
     imageUrl:
@@ -29,7 +29,7 @@ export const Smartphones = {
     price: "$899",
     brand: "OnePlus",
   },
-  4: {
+  {
     title: "Oppo Find X2 Pro ",
     storage: "128/256 Gb",
     imageUrl:
@@ -39,4 +39,4 @@ export const Smartphones = {
     price: "$1341",
     brand: "Oppo",
   },
-};
+];

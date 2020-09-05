@@ -7,3 +7,14 @@
 .header__icon {
   color: #737373;
 }
+.drawer__element {
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  color: grey;
+  padding: 1rem;
+  font-size: large;
+}
+.drawer__element > h3 {
+  margin-left: 1rem;
+}
