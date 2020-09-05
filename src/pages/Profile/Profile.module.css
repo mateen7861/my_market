@@ -1,0 +1,24 @@
+.profile__top__background {
+  background: rgb(251, 177, 42);
+  background: linear-gradient(
+    180deg,
+    rgba(251, 177, 42, 1) 0%,
+    rgba(255, 165, 0, 1) 100%
+  );
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profile__detail_el {
+  display: flex;
+  margin-top: 2rem;
+  justify-content: left;
+  align-items: left;
+  margin-left: 2rem;
+}
+.profile__detail_el > p {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+}

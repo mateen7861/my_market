@@ -14,7 +14,7 @@ const ProductCard = ({
       <div className={styles.ProductCard}>
         <div className={styles.ProductCard__details}>
           <h2 className={styles.ProductCard__details__title}>{title}</h2>
-          <h4 className={styles.ProductCard__details__price}>${price}</h4>
+          <h4 className={styles.ProductCard__details__price}>{price}</h4>
           <p className={styles.ProductCard__details__storage}>{storage}</p>
 
           <p className={styles.ProductCard__details__desc}>{description}</p>

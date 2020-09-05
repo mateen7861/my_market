@@ -14,7 +14,6 @@ import {
 } from "@material-ui/core";
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 import styles from "./Header.module.css";
-import Home from "../pages/Home";
 import { Link } from "react-router-dom";
 const Header = () => {
   const innerTheme = createMuiTheme({
@@ -55,36 +54,40 @@ const Header = () => {
         </h1>
         <hr />
         <Link to="/" style={{ textDecoration: "none" }}>
-          <IconButton onClick={() => setOpen(false)}>
-            <div className={styles.drawer__element}>
-              <HomeRoundedIcon style={{ color: "orange" }} />
-              <h3 style={{ color: "grey" }}>Home</h3>
-            </div>
-          </IconButton>
+          <div
+            className={styles.drawer__element}
+            onClick={() => setOpen(false)}
+          >
+            <HomeRoundedIcon style={{ color: "orange" }} />
+            <h3 style={{ color: "grey" }}>Home</h3>
+          </div>
         </Link>
         <Link to="/search" style={{ textDecoration: "none" }}>
-          <IconButton onClick={() => setOpen(false)}>
-            <div className={styles.drawer__element}>
-              <SearchRoundedIcon style={{ color: "orange" }} />
-              <h3 style={{ color: "grey" }}>Search</h3>
-            </div>
-          </IconButton>
+          <div
+            className={styles.drawer__element}
+            onClick={() => setOpen(false)}
+          >
+            <SearchRoundedIcon style={{ color: "orange" }} />
+            <h3 style={{ color: "grey" }}>Search</h3>
+          </div>
         </Link>
         <Link to="/cart" style={{ textDecoration: "none" }}>
-          <IconButton onClick={() => setOpen(false)}>
-            <div className={styles.drawer__element}>
-              <ShoppingCartIcon style={{ color: "orange" }} />
-              <h3 style={{ color: "grey" }}>Cart</h3>
-            </div>
-          </IconButton>
+          <div
+            className={styles.drawer__element}
+            onClick={() => setOpen(false)}
+          >
+            <ShoppingCartIcon style={{ color: "orange" }} />
+            <h3 style={{ color: "grey" }}>Cart</h3>
+          </div>
         </Link>
         <Link to="/me" style={{ textDecoration: "none" }}>
-          <IconButton onClick={() => setOpen(false)}>
-            <div className={styles.drawer__element}>
-              <PersonRoundedIcon style={{ color: "orange" }} />
-              <h3 style={{ color: "grey" }}>Profile</h3>
-            </div>
-          </IconButton>
+          <div
+            className={styles.drawer__element}
+            onClick={() => setOpen(false)}
+          >
+            <PersonRoundedIcon style={{ color: "orange" }} />
+            <h3 style={{ color: "grey" }}>Profile</h3>
+          </div>
         </Link>
       </Drawer>
     </ThemeProvider>
