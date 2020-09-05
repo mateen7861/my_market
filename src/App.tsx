@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Profile from "./pages/Profile";
 import Cart from "./pages/Cart";
+import DetailsCard from "./components/ProductCardDetails";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/me" element={<Profile />} />
+        <Route path="/:title" element={<DetailsCard />} />
       </Routes>
       <Footer />
     </div>

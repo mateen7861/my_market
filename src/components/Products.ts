@@ -1,5 +1,6 @@
 export const Smartphones = [
   {
+    id: 1,
     title: "iphone 11 pro",
     storage: "64/128/256 Gb",
     imageUrl:
@@ -9,7 +10,9 @@ export const Smartphones = [
     price: "$1099",
     brand: "Apple",
   },
- {
+  {
+    id: 2,
+
     title: "Note20 Ultra ",
     storage: "128/256/512 Gb",
     imageUrl:
@@ -20,6 +23,8 @@ export const Smartphones = [
     brand: "Samsung",
   },
   {
+    id: 3,
+
     title: "OnePlus 8 Pro ",
     storage: "128/256 Gb",
     imageUrl:
@@ -30,6 +35,8 @@ export const Smartphones = [
     brand: "OnePlus",
   },
   {
+    id: 4,
+
     title: "Oppo Find X2 Pro ",
     storage: "128/256 Gb",
     imageUrl:
