@@ -13,8 +13,10 @@ const ProductCard = ({
   brand,
   imageUrl,
   storage,
+  count,
 }: any) => {
   const dispatch = useDispatch();
+
   const AddToCart = () => {
     dispatch(
       ADD({
@@ -25,18 +27,18 @@ const ProductCard = ({
         brand,
         imageUrl,
         storage,
+        count,
+        total_price: count * price,
       })
     );
   };
-  const cart1 = useSelector((state: any) => {
-    console.table(state.cart.cart);
-  });
+  useSelector((state: any) => console.log(state));
   return (
     <div className={styles.root}>
       <div className={styles.ProductCard}>
         <div className={styles.ProductCard__details}>
           <h2 className={styles.ProductCard__details__title}>{title}</h2>
-          <h4 className={styles.ProductCard__details__price}>{price}</h4>
+          <h4 className={styles.ProductCard__details__price}>${price}</h4>
           <p className={styles.ProductCard__details__storage}>{storage}</p>
 
           <p className={styles.ProductCard__details__desc}>{description}</p>

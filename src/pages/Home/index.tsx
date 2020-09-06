@@ -21,6 +21,7 @@ const Home = () => {
         <h1 className={styles.home__title1}>My</h1>
         <h1 className={styles.home__title2}>Market</h1>
       </header>
+
       <div className={styles.home__search}>
         <IconButton>
           <SearchRoundedIcon style={{ color: "grey" }} />
@@ -32,12 +33,20 @@ const Home = () => {
         />
       </div>
       <br />
-      {console.log(filteredData)}
 
       {filteredData.length !== 0 ? (
         filteredData.map(
           (
-            { id, title, imageUrl, brand, description, price, storage }: any,
+            {
+              id,
+              title,
+              imageUrl,
+              brand,
+              description,
+              price,
+              storage,
+              count,
+            }: any,
             index: any
           ) => (
             <div key={index}>
@@ -49,6 +58,7 @@ const Home = () => {
                 brand={brand}
                 price={price}
                 storage={storage}
+                count={count}
               />
             </div>
           )

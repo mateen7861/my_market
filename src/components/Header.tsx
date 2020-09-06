@@ -15,6 +15,7 @@ import {
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 import styles from "./Header.module.css";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Header = () => {
   const innerTheme = createMuiTheme({
     palette: {
@@ -29,7 +30,9 @@ const Header = () => {
     },
   }))(Badge);
   const [open, setOpen] = useState<boolean>(false);
-
+  const cart = useSelector((state: any) => {
+    return state.cart.cart.length;
+  });
   return (
     <ThemeProvider theme={innerTheme}>
       <header className={styles.header}>
@@ -37,7 +40,7 @@ const Header = () => {
           <MenuIcon className={styles.header__icon} style={{ fontSize: 30 }} />
         </IconButton>
         <IconButton>
-          <StyledBadge showZero badgeContent={0} color="secondary">
+          <StyledBadge showZero badgeContent={cart} color="secondary">
             <ShoppingCartIcon />
           </StyledBadge>
         </IconButton>
