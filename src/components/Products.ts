@@ -1,6 +1,10 @@
 export const Smartphones = [
   {
     id: 1,
+    ram: "4Gb",
+    battery: "4500mAh",
+    camera: "12mp+12mp+5mp",
+    color: "Grey /Gold /Balck",
     title: "iphone 11 pro",
     storage: "64/128/256 Gb",
     imageUrl:
@@ -12,11 +16,16 @@ export const Smartphones = [
   },
   {
     id: 2,
+    battery: "4500mAh",
+    camera: "108mp+12mp+5mp",
+
+    ram: "12Gb",
+    color: "Grey /Gold /Balck",
 
     title: "Note20 Ultra ",
     storage: "128/256/512 Gb",
     imageUrl:
-      "https://www.geeky-gadgets.com/wp-content/uploads/2020/08/Note20-Ultra-5G-3.jpg",
+      "https://www.gizmochina.com/wp-content/uploads/2020/07/Samsung-Galaxy-Note-20-Ultra-564x564.jpg",
     description:
       "The minimal design features a metal body elevated by exquisite details and transcendent colors and durable Corning® Gorilla® Glass Victus™ — the toughest Gorilla Glass ever in a smartphone.1, 2 Each Galaxy Note20 and Note20 Ultra is complemented by a matching S Pen.",
     price: "$1299",
@@ -24,6 +33,11 @@ export const Smartphones = [
   },
   {
     id: 3,
+    battery: "4500mAh",
+    camera: "64mp+16mp+5mp",
+
+    ram: "12Gb",
+    color: "Grey /Gold /Balck",
 
     title: "OnePlus 8 Pro ",
     storage: "128/256 Gb",
@@ -36,6 +50,11 @@ export const Smartphones = [
   },
   {
     id: 4,
+    battery: "4500mAh",
+    camera: "64mp+12mp+8mp",
+
+    ram: "12Gb",
+    color: "Grey /Gold /Balck",
 
     title: "Oppo Find X2 Pro ",
     storage: "128/256 Gb",

@@ -1,7 +1,12 @@
 import React from "react";
 import styles from "./ProductCard.module.css";
 import { Button } from "@material-ui/core";
+import { useDispatch, useSelector } from "react-redux";
+import { ADD } from "../store/cartSlice";
+
+import { Link } from "react-router-dom";
 const ProductCard = ({
+  id,
   title,
   description,
   price,
@@ -9,6 +14,23 @@ const ProductCard = ({
   imageUrl,
   storage,
 }: any) => {
+  const dispatch = useDispatch();
+  const AddToCart = () => {
+    dispatch(
+      ADD({
+        id,
+        title,
+        description,
+        price,
+        brand,
+        imageUrl,
+        storage,
+      })
+    );
+  };
+  const cart1 = useSelector((state: any) => {
+    console.table(state.cart.cart);
+  });
   return (
     <div className={styles.root}>
       <div className={styles.ProductCard}>
@@ -31,20 +53,23 @@ const ProductCard = ({
           color: "orange",
           textTransform: "capitalize",
         }}
+        onClick={AddToCart}
       >
         Add to Cart
       </Button>
-      <Button
-        variant="contained"
-        style={{
-          backgroundColor: "orange",
-          width: "8rem",
-          color: "#fff",
-          marginLeft: "1rem",
-        }}
-      >
-        Details
-      </Button>
+      <Link to={`/${id}`} style={{ textDecoration: "none" }}>
+        <Button
+          variant="contained"
+          style={{
+            backgroundColor: "orange",
+            width: "8rem",
+            color: "#fff",
+            marginLeft: "1rem",
+          }}
+        >
+          Details
+        </Button>
+      </Link>
     </div>
   );
 };

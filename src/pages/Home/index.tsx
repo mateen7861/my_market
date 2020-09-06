@@ -37,11 +37,12 @@ const Home = () => {
       {filteredData.length !== 0 ? (
         filteredData.map(
           (
-            { title, imageUrl, brand, description, price, storage }: any,
+            { id, title, imageUrl, brand, description, price, storage }: any,
             index: any
           ) => (
             <div key={index}>
               <ProductCard
+                id={id}
                 title={title}
                 description={description}
                 imageUrl={imageUrl}
