@@ -2,7 +2,7 @@ export const Smartphones = [
   {
     id: 1,
     ram: "4Gb",
-    count: 2,
+    count: 1,
     price: 1099,
 
     battery: "4500mAh",
@@ -21,7 +21,7 @@ export const Smartphones = [
     id: 2,
     battery: "4500mAh",
     camera: "108mp+12mp+5mp",
-    count: 2,
+    count: 1,
     price: 1299,
 
     ram: "12Gb",
@@ -38,7 +38,7 @@ export const Smartphones = [
   },
   {
     id: 3,
-    count: 2,
+    count: 1,
     price: 899,
 
     battery: "4500mAh",
@@ -58,7 +58,7 @@ export const Smartphones = [
   },
   {
     id: 4,
-    count: 2,
+    count: 1,
     price: 1341,
 
     battery: "4500mAh",

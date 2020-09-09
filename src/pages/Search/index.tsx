@@ -28,12 +28,20 @@ const Home = () => {
         />
       </div>
       <br />
-      {console.log(filteredData)}
 
       {filteredData.length !== 0 ? (
         filteredData.map(
           (
-            { id, title, imageUrl, brand, description, price, storage }: any,
+            {
+              id,
+              title,
+              imageUrl,
+              brand,
+              description,
+              price,
+              storage,
+              count,
+            }: any,
             index: any
           ) => (
             <div key={index}>
@@ -45,6 +53,7 @@ const Home = () => {
                 brand={brand}
                 price={price}
                 storage={storage}
+                count={count}
               />
             </div>
           )

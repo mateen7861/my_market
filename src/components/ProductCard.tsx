@@ -32,7 +32,6 @@ const ProductCard = ({
       })
     );
   };
-  useSelector((state: any) => console.log(state));
   return (
     <div className={styles.root}>
       <div className={styles.ProductCard}>
