@@ -4,6 +4,9 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import ButtonBase from "@material-ui/core/ButtonBase";
+import { Button } from "@material-ui/core";
+import { useDispatch } from "react-redux";
+import { REMOVE } from "../store/cartSlice";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -36,7 +39,15 @@ export default function ComplexGrid({
   storage,
 }: any) {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
+  const remove_from_cart = () => {
+    dispatch(
+      REMOVE({
+        id,
+      })
+    );
+  };
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
@@ -60,7 +71,9 @@ export default function ComplexGrid({
                 </Typography>
               </Grid>
               <Grid item>
-                <Button>Remove </Button>
+                <Button onClick={remove_from_cart} variant="contained">
+                  Remove
+                </Button>
               </Grid>
             </Grid>
             <Grid item>
