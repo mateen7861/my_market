@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
     paper: {
       padding: theme.spacing(2),
       maxWidth: 700,
+      marginBottom: "1rem",
     },
     image: {
       width: 128,
@@ -26,6 +27,10 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "block",
       maxWidth: "100%",
       maxHeight: "100%",
+    },
+    rem_btn: {
+      backgroundColor: "orange !important",
+      color: "white",
     },
   })
 );
@@ -71,8 +76,12 @@ export default function ComplexGrid({
                 </Typography>
               </Grid>
               <Grid item>
-                <Button onClick={remove_from_cart} variant="contained">
-                  Remove
+                <Button
+                  className={classes.rem_btn}
+                  onClick={remove_from_cart}
+                  variant="contained"
+                >
+                  Remove from Cart
                 </Button>
               </Grid>
             </Grid>

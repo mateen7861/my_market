@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
@@ -7,7 +7,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import PersonRoundedIcon from "@material-ui/icons/PersonRounded";
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
 import "./Footer.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -22,13 +22,30 @@ const useStyles = makeStyles({
 export default function SimpleBottomNavigation() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-
+  const location = useLocation();
+  const handleChange = (event: any, newValue: number) => {
+    setValue(newValue);
+  };
+  useEffect(() => {
+    switch (location.pathname) {
+      case "/":
+        setValue(0);
+        break;
+      case "/search":
+        setValue(1);
+        break;
+      case "/cart":
+        setValue(2);
+        break;
+      case "/me":
+        setValue(3);
+        break;
+    }
+  }, [location.pathname]);
   return (
     <BottomNavigation
       value={value}
-      onChange={(event, newValue) => {
-        setValue(newValue);
-      }}
+      onChange={handleChange}
       showLabels
       className={classes.root}
     >

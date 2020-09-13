@@ -14,9 +14,10 @@ import {
 } from "@material-ui/core";
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 import styles from "./Header.module.css";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 const Header = () => {
+  const navigate = useNavigate();
   const innerTheme = createMuiTheme({
     palette: {
       secondary: {
@@ -39,7 +40,7 @@ const Header = () => {
         <IconButton onClick={() => setOpen(!open)}>
           <MenuIcon className={styles.header__icon} style={{ fontSize: 30 }} />
         </IconButton>
-        <IconButton>
+        <IconButton onClick={() => navigate("/cart")}>
           <StyledBadge showZero badgeContent={cart} color="secondary">
             <ShoppingCartIcon />
           </StyledBadge>
