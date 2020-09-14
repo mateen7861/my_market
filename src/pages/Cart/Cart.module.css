@@ -24,6 +24,7 @@
 @media only screen and (max-width: 768px) {
   .cart {
     flex-direction: column-reverse;
+    padding: 1rem;
   }
   .cart__details {
     margin-bottom: 2rem;
