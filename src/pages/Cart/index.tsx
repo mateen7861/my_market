@@ -8,7 +8,7 @@ const Index: FC = () => {
   const CartData: Smartphone[] = useSelector((state: any) => state.cart.cart);
   useEffect(() => {
     setData(CartData);
-  });
+  }, [CartData]);
   return data?.length ? (
     <div className={styles.cart}>
       <div className={styles.cart__product}>

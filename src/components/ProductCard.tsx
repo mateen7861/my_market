@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styles from "./ProductCard.module.css";
 import { Button } from "@material-ui/core";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { ADD } from "../store/cartSlice";
 
 import { Link } from "react-router-dom";
