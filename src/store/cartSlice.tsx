@@ -1,5 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { Smartphone } from "../components/Products";
+interface Cart {
+  cart: Smartphone[];
+}
+interface AddToCartAction {
+  type: string;
+  payload: Smartphone;
+}
 
+interface RemoveFromCartAction {
+  type: string;
+  payload: { id: number };
+}
 export const cartSlice = createSlice({
   name: "Cart",
   initialState: {
@@ -7,12 +19,12 @@ export const cartSlice = createSlice({
   },
 
   reducers: {
-    ADD: (state: any, action: any) => {
+    ADD: (state: Cart, action: AddToCartAction) => {
       state.cart.push(action.payload);
     },
-    REMOVE: (state: any, action: any) => {
+    REMOVE: (state: Cart, action: RemoveFromCartAction) => {
       const index = state.cart.findIndex(
-        (basketItem: any) => basketItem.id === action.payload.id
+        (basketItem: Smartphone) => basketItem.id === action.payload.id
       );
       let newBasket = [...state.cart];
 
@@ -20,7 +32,7 @@ export const cartSlice = createSlice({
         newBasket.splice(index, 1);
       } else {
         console.warn(
-          `Cant remove product (id: ${action.id}) as its not in basket!`
+          `Cant remove product (id: ${action.payload.id}) as its not in basket!`
         );
       }
 

@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, FC } from "react";
 import { IconButton } from "@material-ui/core";
 import styles from "../Home/Home.module.css";
-import { Smartphones } from "../../components/Products";
+import { Smartphone, Smartphones } from "../../components/Products";
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
 import ProductCard from "../../components/ProductCard";
-const Home = () => {
-  const [search, setSearch] = useState("");
-  const [filteredData, setFilteredData]: any = useState([]);
+const Home: FC = () => {
+  const [search, setSearch] = useState<string>("");
+  const [filteredData, setFilteredData] = useState<Smartphone[]>([]);
 
   useEffect(() => {
     setFilteredData(
-      Smartphones.filter((smartphone) =>
+      Smartphones.filter((smartphone: Smartphone) =>
         smartphone.title.toLowerCase().includes(search.toLowerCase())
       )
     );
@@ -40,9 +40,12 @@ const Home = () => {
               description,
               price,
               storage,
-              count,
-            }: any,
-            index: any
+              battery,
+              camera,
+              ram,
+              color,
+            }: Smartphone,
+            index: number
           ) => (
             <div key={index}>
               <ProductCard
@@ -53,7 +56,10 @@ const Home = () => {
                 brand={brand}
                 price={price}
                 storage={storage}
-                count={count}
+                battery={battery}
+                camera={camera}
+                ram={ram}
+                color={color}
               />
             </div>
           )

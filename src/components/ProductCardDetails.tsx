@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Smartphones } from "./Products";
+import { Smartphone, Smartphones } from "./Products";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
@@ -17,9 +17,6 @@ import {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    // [theme.breakpoints.up("sm")]: {
-    //   marginTop: "2rem",
-    // },
   },
   paper: {
     padding: theme.spacing(2),
@@ -52,9 +49,9 @@ const useStyles = makeStyles((theme) => ({
 export default function ComplexGrid() {
   const classes = useStyles();
   const { title } = useParams();
-  const [data, setData]: any = useState();
+  const [data, setData] = useState<Smartphone[]>();
   useEffect(() => {
-    const tempData = Smartphones.filter((Smartphone) => {
+    const tempData: Smartphone[] = Smartphones.filter((Smartphone) => {
       return Smartphone.id === Number(title);
     });
     setData(tempData);
@@ -62,7 +59,7 @@ export default function ComplexGrid() {
 
   return (
     <div className={classes.root}>
-      {data?.map((v: any) => (
+      {data?.map((v: Smartphone) => (
         <Paper className={classes.paper}>
           <Grid container spacing={2}>
             <Grid item>

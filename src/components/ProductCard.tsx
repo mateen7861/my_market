@@ -1,11 +1,12 @@
-import React from "react";
+import React, { FC } from "react";
 import styles from "./ProductCard.module.css";
 import { Button } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { ADD } from "../store/cartSlice";
 
 import { Link } from "react-router-dom";
-const ProductCard = ({
+import { Smartphone } from "./Products";
+const ProductCard: FC<Smartphone> = ({
   id,
   title,
   description,
@@ -13,11 +14,14 @@ const ProductCard = ({
   brand,
   imageUrl,
   storage,
-  count,
-}: any) => {
+  battery,
+  camera,
+  color,
+  ram,
+}) => {
   const dispatch = useDispatch();
 
-  const AddToCart = () => {
+  const AddToCart = (): void => {
     dispatch(
       ADD({
         id,
@@ -27,8 +31,10 @@ const ProductCard = ({
         brand,
         imageUrl,
         storage,
-        count,
-        total_price: count * price,
+        battery,
+        camera,
+        color,
+        ram,
       })
     );
   };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import styles from "./Profile.module.css";
 import { Avatar, makeStyles, createStyles, Theme } from "@material-ui/core";
 import Pic from "./mateen.jpg";
@@ -8,7 +8,7 @@ import PhoneRoundedIcon from "@material-ui/icons/PhoneRounded";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import RoomIcon from "@material-ui/icons/Room";
-const Profile = () => {
+const Profile: FC = () => {
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
       root: {

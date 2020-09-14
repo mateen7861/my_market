@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
@@ -16,7 +16,7 @@ import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 import styles from "./Header.module.css";
 import { useNavigate, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-const Header = () => {
+const Header: FC = () => {
   const navigate = useNavigate();
   const innerTheme = createMuiTheme({
     palette: {
@@ -31,7 +31,7 @@ const Header = () => {
     },
   }))(Badge);
   const [open, setOpen] = useState<boolean>(false);
-  const cart = useSelector((state: any) => {
+  const cart: number = useSelector((state: any) => {
     return state.cart.cart.length;
   });
   return (

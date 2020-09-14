@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
@@ -7,6 +7,7 @@ import ButtonBase from "@material-ui/core/ButtonBase";
 import { Button } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { REMOVE } from "../store/cartSlice";
+import { Smartphone } from "./Products";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -35,18 +36,18 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default function ComplexGrid({
+const ComplexGrid: FC<Smartphone> = ({
   title,
   id,
   price,
   brand,
   imageUrl,
   storage,
-}: any) {
+}) => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  const remove_from_cart = () => {
+  const remove_from_cart = (): void => {
     dispatch(
       REMOVE({
         id,
@@ -95,4 +96,5 @@ export default function ComplexGrid({
       </Paper>
     </div>
   );
-}
+};
+export default ComplexGrid;
