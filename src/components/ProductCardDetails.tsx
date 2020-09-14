@@ -13,6 +13,8 @@ import {
   ListItemText,
   Divider,
 } from "@material-ui/core";
+import { useDispatch } from "react-redux";
+import { ADD } from "../store/cartSlice";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,7 +58,25 @@ export default function ComplexGrid() {
     });
     setData(tempData);
   }, [title]);
+  const dispatch = useDispatch();
 
+  const AddToCart = (v: Smartphone): void => {
+    dispatch(
+      ADD({
+        id: v?.id,
+        title: v?.title,
+        description: v?.description,
+        price: v?.price,
+        brand: v?.brand,
+        imageUrl: v?.imageUrl,
+        storage: v?.storage,
+        battery: v?.battery,
+        camera: v?.camera,
+        color: v?.color,
+        ram: v?.ram,
+      })
+    );
+  };
   return (
     <div className={classes.root}>
       {data?.map((v: Smartphone) => (
@@ -109,6 +129,7 @@ export default function ComplexGrid() {
                 </Grid>
                 <Grid item>
                   <Button
+                    onClick={() => AddToCart(v)}
                     size="large"
                     variant="contained"
                     className={classes.cartbtn}
@@ -119,7 +140,7 @@ export default function ComplexGrid() {
               </Grid>
               <Grid item>
                 <Typography variant="h5" className={classes.price}>
-                  {v.price}
+                  ${v.price}
                 </Typography>
               </Grid>
             </Grid>
