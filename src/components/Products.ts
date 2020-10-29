@@ -84,7 +84,7 @@ export const Smartphones: Smartphone[] = [
     title: "Oppo Find X2 Pro ",
     storage: "128/256 Gb",
     imageUrl:
-      "https://my-techspace.com/wp-content/uploads/2020/03/oppo-find-x2-pro-lamborghini-1-1.jpg",
+      "https://images-na.ssl-images-amazon.com/images/I/91sscTRuOzL._AC_SL1500_.jpg",
     description:
       "We’ve boosted the screen refresh rate from 60Hz to 120Hz for smoother, clearer motion that’s easier on the eyes. And thanks to a touch sampling rate of up to 240Hz, every touch gets an instant and accurate response.Find X2 series brings visuals to life with over 1 billion colours (8+2-bit) – 64 times the typical number (8-bit). Now, colour transitions look smooth, and every detail shines through in natural, lifelike vibrancy.",
 
