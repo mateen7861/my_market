@@ -44,7 +44,7 @@ export const Smartphones: Smartphone[] = [
     title: "Note20 Ultra ",
     storage: "128/256/512 Gb",
     imageUrl:
-      "https://specials-images.forbesimg.com/imageserve/5f1a1e11f9a11fd8004ab415/960x0.jpg?fit=scale",
+      "https://deviceloop.com/wp-content/uploads/2020/07/SAMSUNG-GALAXY-NOTE-20-ULTRA-BRONZE-FRONT-WITH-SPEN-e1595883816861.jpg",
     description:
       "The minimal design features a metal body elevated by exquisite details and transcendent colors and durable Corning® Gorilla® Glass Victus™ — the toughest Gorilla Glass ever in a smartphone.1, 2 Each Galaxy Note20 and Note20 Ultra is complemented by a matching S Pen.",
 
